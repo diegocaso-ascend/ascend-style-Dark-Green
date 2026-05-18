@@ -458,3 +458,61 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ALERTAS
    ============================================================ */
 .hl_login .alert { color: #1a1a1a !important; }
+
+/* ============================================================
+   BOTONES TOPBAR QUE NO RECIBEN HOVER
+   ============================================================ */
+
+/* Ask AI button (#template-power-dialer) */
+#template-power-dialer .btn-circle,
+#template-power-dialer button,
+[id^="template-power-dialer"] button {
+    background: var(--sb-teal) !important;
+    border: none !important;
+    color: var(--sb-bg) !important;
+    transition: all 0.25s ease !important;
+}
+#template-power-dialer .btn-circle:hover,
+#template-power-dialer button:hover {
+    background: var(--sb-red) !important;
+    color: var(--sb-cream) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
+}
+
+/* Texto/ícono dentro del botón Ask AI */
+#template-power-dialer span,
+#template-power-dialer i {
+    color: var(--sb-bg) !important;
+    transition: color 0.25s ease !important;
+}
+#template-power-dialer button:hover span,
+#template-power-dialer button:hover i {
+    color: var(--sb-cream) !important;
+}
+
+/* Botón megáfono / feedback (#i18n-feedback) */
+#i18n-feedback .btn-circle,
+#i18n-feedback button,
+[id="i18n-feedback"] button {
+    background: var(--sb-teal) !important;
+    border: none !important;
+    color: var(--sb-bg) !important;
+    transition: all 0.25s ease !important;
+}
+#i18n-feedback .btn-circle:hover,
+#i18n-feedback button:hover {
+    background: var(--sb-red) !important;
+    color: var(--sb-cream) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
+}
+#i18n-feedback span,
+#i18n-feedback i {
+    color: var(--sb-bg) !important;
+    transition: color 0.25s ease !important;
+}
+#i18n-feedback button:hover span,
+#i18n-feedback button:hover i {
+    color: var(--sb-cream) !important;
+}
