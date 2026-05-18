@@ -518,53 +518,62 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 }
 
 /* ============================================================
-   FONDO TEAL EN Ask AI y MEGÁFONO (fuerza color base)
+   ÍCONO TELÉFONO (Llamada de voz)
    ============================================================ */
-
-/* Wrapper raíz de las apps Vue independientes */
-#template-power-dialer,
-#i18n-feedback {
-    background: transparent !important;
-}
-
-/* Todos los botones y elementos clickables dentro */
-#template-power-dialer > *,
-#template-power-dialer .hr-wrapper-container,
-#template-power-dialer [class*="hr-"] button,
-#template-power-dialer [class*="platform"] button,
-#i18n-feedback > *,
-#i18n-feedback .hr-wrapper-container,
-#i18n-feedback [class*="hr-"] button,
-#i18n-feedback [class*="platform"] button {
+.hl_header button[aria-label="Llamada de voz"],
+.hl_header button.bg-success-600 {
     background-color: var(--sb-teal) !important;
-    color: var(--sb-bg) !important;
-    border: none !important;
+    border: 1px solid var(--sb-teal) !important;
     border-radius: 50% !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
+}
+.hl_header button[aria-label="Llamada de voz"] svg,
+.hl_header button.bg-success-600 svg {
+    color: var(--sb-bg) !important;
+    stroke: var(--sb-bg) !important;
+    fill: var(--sb-bg) !important;
+}
+.hl_header button[aria-label="Llamada de voz"]:hover,
+.hl_header button.bg-success-600:hover {
+    background-color: var(--sb-red) !important;
+    border-color: var(--sb-red) !important;
+    transform: translateY(-2px) !important;
+}
+.hl_header button[aria-label="Llamada de voz"]:hover svg,
+.hl_header button.bg-success-600:hover svg {
+    color: var(--sb-cream) !important;
+    stroke: var(--sb-cream) !important;
+    fill: var(--sb-cream) !important;
 }
 
-/* Sobreescribir color púrpura del Ask AI específicamente */
-#template-power-dialer button[class*="bg-"],
-#template-power-dialer div[class*="bg-"],
-#template-power-dialer [style*="background"] {
-    background-color: var(--sb-teal) !important;
-    background-image: none !important;
+/* ============================================================
+   ÍCONO ASK AI y MEGÁFONO — btn-circle general
+   ============================================================ */
+.hl_header .btn-circle,
+.hl_header button.rounded-full {
+    background: var(--sb-teal) !important;
+    border: 1px solid var(--sb-teal) !important;
+    transition: background 0.25s ease, border-color 0.25s ease !important;
 }
-
-/* Iconos y texto en color oscuro (fondo claro) */
-#template-power-dialer button *,
-#i18n-feedback button * {
+.hl_header .btn-circle i,
+.hl_header button.rounded-full i,
+.hl_header .btn-circle svg,
+.hl_header button.rounded-full svg {
     color: var(--sb-bg) !important;
     fill: var(--sb-bg) !important;
 }
-
-/* Hover → rojo (ya funciona, reforzamos) */
-#template-power-dialer button:hover,
-#i18n-feedback button:hover {
-    background-color: var(--sb-red) !important;
-    background-image: none !important;
+.hl_header .btn-circle:hover,
+.hl_header button.rounded-full:hover {
+    background: var(--sb-red) !important;
+    border-color: var(--sb-red) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
 }
-#template-power-dialer button:hover *,
-#i18n-feedback button:hover * {
+.hl_header .btn-circle:hover i,
+.hl_header button.rounded-full:hover i,
+.hl_header .btn-circle:hover svg,
+.hl_header button.rounded-full:hover svg {
     color: var(--sb-cream) !important;
     fill: var(--sb-cream) !important;
+    filter: brightness(0) invert(1) !important;
 }
