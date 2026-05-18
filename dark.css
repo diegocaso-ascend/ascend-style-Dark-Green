@@ -516,3 +516,55 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 #i18n-feedback button:hover i {
     color: var(--sb-cream) !important;
 }
+
+/* ============================================================
+   FONDO TEAL EN Ask AI y MEGÁFONO (fuerza color base)
+   ============================================================ */
+
+/* Wrapper raíz de las apps Vue independientes */
+#template-power-dialer,
+#i18n-feedback {
+    background: transparent !important;
+}
+
+/* Todos los botones y elementos clickables dentro */
+#template-power-dialer > *,
+#template-power-dialer .hr-wrapper-container,
+#template-power-dialer [class*="hr-"] button,
+#template-power-dialer [class*="platform"] button,
+#i18n-feedback > *,
+#i18n-feedback .hr-wrapper-container,
+#i18n-feedback [class*="hr-"] button,
+#i18n-feedback [class*="platform"] button {
+    background-color: var(--sb-teal) !important;
+    color: var(--sb-bg) !important;
+    border: none !important;
+    border-radius: 50% !important;
+}
+
+/* Sobreescribir color púrpura del Ask AI específicamente */
+#template-power-dialer button[class*="bg-"],
+#template-power-dialer div[class*="bg-"],
+#template-power-dialer [style*="background"] {
+    background-color: var(--sb-teal) !important;
+    background-image: none !important;
+}
+
+/* Iconos y texto en color oscuro (fondo claro) */
+#template-power-dialer button *,
+#i18n-feedback button * {
+    color: var(--sb-bg) !important;
+    fill: var(--sb-bg) !important;
+}
+
+/* Hover → rojo (ya funciona, reforzamos) */
+#template-power-dialer button:hover,
+#i18n-feedback button:hover {
+    background-color: var(--sb-red) !important;
+    background-image: none !important;
+}
+#template-power-dialer button:hover *,
+#i18n-feedback button:hover * {
+    color: var(--sb-cream) !important;
+    fill: var(--sb-cream) !important;
+}
