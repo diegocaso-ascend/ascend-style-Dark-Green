@@ -1,15 +1,19 @@
 /* ============================================================
-   ASCEND DARK GREEN THEME (VERDE PASTEL)
-   Paleta: Verde teal oscuro con acentos coral
+   ASCEND WHITE THEME
+   Paleta: Blanco limpio con acentos negros + Fucsia
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --sb-bg:    #1E4545;
-  --sb-red:   #E63B4A;
-  --sb-teal:  #8ECECE;
-  --sb-cream: #F0F5EE;
+  --sb-bg:        #ffffff;
+  --sb-bg-dark:   #0d0d0d;
+  --sb-bg-darker: #000000;
+  --sb-border:    #e5e5e5;
+  --sb-icon:      #0d0d0d;
+  --sb-text:      #ffffff;
+  --sb-muted:     #6b7280;
+  --sb-fucsia:    #ff2d78;
 }
 
 body, p, label, input, button, a, h1, h2, h3,
@@ -23,10 +27,10 @@ div:not([class*="icon"]):not([class*="fa"]):not(.fa):not(.fas):not(.material-ico
    LOGIN
    ============================================================ */
 .hl_login {
-    background-color: var(--sb-bg) !important;
+    background-color: #f5f5f5 !important;
     background-image:
-        radial-gradient(circle at top left, rgba(142, 206, 206, 0.2), transparent 45%),
-        radial-gradient(circle at bottom right, rgba(230, 59, 74, 0.18), transparent 45%) !important;
+        radial-gradient(circle at top left, rgba(0,0,0,0.03), transparent 50%),
+        radial-gradient(circle at bottom right, rgba(0,0,0,0.05), transparent 50%) !important;
     min-height: 100vh !important;
     width: 100% !important;
     margin: 0 !important;
@@ -55,15 +59,23 @@ div:not([class*="icon"]):not([class*="fa"]):not(.fa):not(.fas):not(.material-ico
     z-index: 99999 !important;
     filter: none !important;
     object-fit: contain !important;
+    transform: none !important;
 }
 
 .hl_login .hl_login--language-selector,
 label.language-label,
+[data-v-a5b84904].language-label,
 select.removeShadow,
+[data-v-a5b84904].removeShadow,
 .hl_login .hl_login--header select,
 .hl_login .hl_login--header label {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
 
 .hl_login .hl_login--body {
@@ -75,260 +87,498 @@ select.removeShadow,
     max-width: 480px !important;
     height: auto !important;
     z-index: 1000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hl_login .hl_login--form_wrapper {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
 }
 
 .hl_login .card {
-    background-color: rgba(30, 69, 69, 0.82) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(142, 206, 206, 0.25) !important;
+    background-color: #ffffff !important;
+    backdrop-filter: none !important;
+    border: 1px solid var(--sb-border) !important;
     border-radius: 20px !important;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4) !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
     padding: 35px 45px 25px 45px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
 }
 
+.hl_login .card-body { padding: 0 !important; margin: 0 !important; }
+
 .hl_login label,
+.hl_login .control-label,
+.hl_login .form-group label,
 .hl_login p,
 .hl_login a,
-.hl_login span { color: var(--sb-cream) !important; }
+.hl_login span,
+.hl_login .text-muted { color: #0d0d0d !important; }
 
 .hl_login h2 {
     font-size: 0 !important;
     visibility: hidden !important;
     margin: 0 0 15px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
 }
 .hl_login h2::after {
     content: "Ingresa tus datos";
     visibility: visible !important;
     font-size: 26px !important;
-    color: var(--sb-cream) !important;
+    color: #0d0d0d !important;
     display: block !important;
     font-weight: 700 !important;
 }
 
 .hl_login .form-group { margin-bottom: 15px !important; }
 
-.hl_login .divider { display: none !important; }
+.hl_login .divider,
+.hl_login .divider hr,
+.hl_login .divider span,
+.hl_login .divider div,
+.hl_login .bg-white {
+    display: none !important;
+}
+
+.hl_login #google-signin-btn-container { margin-top: 25px !important; display: block !important; }
 
 .hl_login .form-control,
 .hl_login input:not([type="radio"]) {
-    background-color: rgba(30, 69, 69, 0.55) !important;
-    border: 1px solid rgba(142, 206, 206, 0.3) !important;
-    color: var(--sb-cream) !important;
+    background-color: #f9f9f9 !important;
+    border: 1px solid var(--sb-border) !important;
+    color: #0d0d0d !important;
     border-radius: 10px !important;
     height: 48px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-weight: 400 !important;
 }
 .hl_login .form-control:focus {
-    border-color: var(--sb-teal) !important;
-    box-shadow: 0 0 0 2px rgba(142, 206, 206, 0.2) !important;
+    border-color: #0d0d0d !important;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.06) !important;
 }
 
 .hl_login input::placeholder { color: transparent !important; }
 
 .hl_login .btn-primary,
 .hl_login button[type="submit"] {
-    background: var(--sb-red) !important;
-    border: 2px solid var(--sb-red) !important;
+    background: #0d0d0d !important;
+    border: 1px solid #0d0d0d !important;
     border-radius: 10px !important;
-    color: var(--sb-cream) !important;
+    color: #ffffff !important;
     font-weight: 700 !important;
     height: 50px !important;
-    transition: all 0.25s ease !important;
+    width: 100% !important;
+    margin-top: 5px !important;
+    transition: background 0.25s ease !important;
 }
 .hl_login .btn-primary:hover,
 .hl_login button[type="submit"]:hover {
-    background: var(--sb-cream) !important;
-    color: var(--sb-red) !important;
-    border-color: var(--sb-cream) !important;
+    background: #2a2a2a !important;
+    border-color: #2a2a2a !important;
 }
 
 #wl_google_login_button {
-    background-color: var(--sb-cream) !important;
-    border: 1px solid rgba(30, 69, 69, 0.2) !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--sb-border) !important;
     border-radius: 10px !important;
     height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     margin-top: 25px !important;
+    transition: background 0.2s ease !important;
 }
-#wl_google_login_button span { color: var(--sb-bg) !important; }
+#wl_google_login_button:hover { background-color: #f5f5f5 !important; }
+#wl_google_login_button span,
+#wl_google_login_button i,
+#wl_google_login_button * { color: #0d0d0d !important; font-weight: 500 !important; }
 
 .hl_login .powered-by,
 .hl_login .hl_login--footer { display: none !important; }
 
 #forgot_passowrd_btn {
     font-size: 0 !important;
-    text-align: right !important;
+    text-decoration: none !important;
+    display: block !important;
     margin-top: 5px !important;
+    text-align: right !important;
 }
 #forgot_passowrd_btn::after {
     content: "¿Olvidaste tu contraseña?" !important;
     font-size: 13px !important;
-    color: var(--sb-teal) !important;
+    color: var(--sb-muted) !important;
     visibility: visible !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
 }
 #forgot_passowrd_btn:hover::after {
-    color: var(--sb-cream) !important;
+    color: #0d0d0d !important;
     text-decoration: underline !important;
 }
 
 .hl_login .control.radio {
     display: flex !important;
     align-items: center !important;
-    background: rgba(142, 206, 206, 0.07) !important;
-    border: 1px solid rgba(142, 206, 206, 0.2) !important;
+    background: #f9f9f9 !important;
+    border: 1px solid var(--sb-border) !important;
     border-radius: 10px !important;
     padding: 15px !important;
     margin-bottom: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
 }
 .hl_login .control.radio:hover {
-    background: rgba(230, 59, 74, 0.12) !important;
-    border-color: var(--sb-red) !important;
+    background: #f0f0f0 !important;
+    border-color: #0d0d0d !important;
 }
 .hl_login .control.radio input[type="radio"] {
+    flex-shrink: 0 !important;
     margin-right: 15px !important;
-    accent-color: var(--sb-red) !important;
+    width: 18px !important;
+    height: 18px !important;
+    accent-color: #0d0d0d !important;
+}
+.hl_login .control.radio span {
+    color: #0d0d0d !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    font-weight: 500 !important;
 }
 
 /* ============================================================
-   SIDEBAR
+   SIDEBAR — FONDO NEGRO, LETRAS E ICONOS BLANCOS
    ============================================================ */
 #sidebar-v2,
 #sidebar-v2 .default-bg-color,
 .lead-connector {
-    background-color: var(--sb-bg) !important;
-    border-right: 1px solid rgba(142, 206, 206, 0.15) !important;
+    background-color: #0d0d0d !important;
+    border-right: 1px solid #2a2a2a !important;
 }
 
-#sidebar-v2 ::-webkit-scrollbar { width: 6px !important; }
-#sidebar-v2 ::-webkit-scrollbar-track { background: transparent !important; }
-#sidebar-v2 ::-webkit-scrollbar-thumb { background: var(--sb-teal) !important; border-radius: 10px !important; }
-#sidebar-v2 ::-webkit-scrollbar-thumb:hover { background: var(--sb-red) !important; }
+#sidebar-v2 ::-webkit-scrollbar,
+.hl_v2-location_switcher ::-webkit-scrollbar,
+.lead-connector ::-webkit-scrollbar { width: 6px !important; }
+#sidebar-v2 ::-webkit-scrollbar-track,
+.hl_v2-location_switcher ::-webkit-scrollbar-track,
+.lead-connector ::-webkit-scrollbar-track { background: transparent !important; }
+#sidebar-v2 ::-webkit-scrollbar-thumb,
+.hl_v2-location_switcher ::-webkit-scrollbar-thumb,
+.lead-connector ::-webkit-scrollbar-thumb { background: #3a3a3a !important; border-radius: 10px !important; }
+#sidebar-v2 ::-webkit-scrollbar-thumb:hover,
+.hl_v2-location_switcher ::-webkit-scrollbar-thumb:hover,
+.lead-connector ::-webkit-scrollbar-thumb:hover { background: var(--sb-fucsia) !important; }
 
 #backButtonv2 {
-    background-color: rgba(142, 206, 206, 0.08) !important;
-    border: 1px solid rgba(142, 206, 206, 0.18) !important;
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
     border-radius: 8px !important;
     margin-bottom: 10px !important;
-    transition: all 0.25s ease !important;
+    transition: background 0.25s ease, border-color 0.25s ease !important;
 }
 #backButtonv2:hover {
-    background-color: var(--sb-red) !important;
-    border-color: var(--sb-red) !important;
+    background-color: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
 }
 #backButtonv2 i, #backButtonv2 span {
-    color: var(--sb-teal) !important;
+    color: #ffffff !important;
     transition: color 0.25s ease !important;
 }
-#backButtonv2:hover i, #backButtonv2:hover span { color: var(--sb-cream) !important; }
+#backButtonv2:hover i, #backButtonv2:hover span { color: #0d0d0d !important; }
 
 #sidebar-v2 .menu-title {
-    color: var(--sb-cream) !important;
-    font-weight: 800 !important;
-    border-bottom: 1px solid rgba(142, 206, 206, 0.15) !important;
+    color: #888888 !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    border-bottom: 1px solid #2a2a2a !important;
     padding-bottom: 10px !important;
     margin-bottom: 10px !important;
 }
 
+/* ============================================================
+   LOCATION SWITCHER BUTTON — NEGRO FONDO, BORDER BLANCO
+   ============================================================ */
 #location-switcher-sidbar-v2 {
-    background-color: rgba(142, 206, 206, 0.05) !important;
-    border: 1px solid rgba(142, 206, 206, 0.18) !important;
+    background-color: #0d0d0d !important;
+    border: 1px solid #ffffff !important;
     border-radius: 10px !important;
-    transition: all 0.25s ease !important;
-}
-#location-switcher-sidbar-v2:hover {
-    background-color: var(--sb-red) !important;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 #location-switcher-sidbar-v2 span,
-#location-switcher-sidbar-v2 div { color: var(--sb-cream) !important; }
+#location-switcher-sidbar-v2 i,
+#location-switcher-sidbar-v2 div {
+    color: #ffffff !important;
+}
+#location-switcher-sidbar-v2:hover,
+#location-switcher-sidbar-v2:focus,
+#location-switcher-sidbar-v2.active {
+    background-color: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
+    border-width: 2px !important;
+    box-shadow: 0 2px 8px rgba(255,45,120,0.3) !important;
+}
+#location-switcher-sidbar-v2:hover span,
+#location-switcher-sidbar-v2:hover i,
+#location-switcher-sidbar-v2:hover div,
+#location-switcher-sidbar-v2:focus span,
+#location-switcher-sidbar-v2:focus i,
+#location-switcher-sidbar-v2:focus div,
+#location-switcher-sidbar-v2.active span,
+#location-switcher-sidbar-v2.active i,
+#location-switcher-sidbar-v2.active div {
+    color: #0d0d0d !important;
+}
+#location-switcher-sidbar-v2:hover svg,
+#location-switcher-sidbar-v2:hover img {
+    filter: brightness(0) !important;
+}
 
-#sidebar-v2 nav a {
-    transition: all 0.25s ease !important;
+/* ============================================================
+   BOTÓN RAYO (⚡ quickActions / acciones rápidas)
+   ============================================================ */
+#quickActions,
+#sidebar-v2 button[id*="quick"],
+#sidebar-v2 [class*="quick-action"],
+#sidebar-v2 button svg[class*="bolt"],
+#sidebar-v2 button:has(svg[data-icon="bolt"]) {
+    background-color: #0d0d0d !important;
+    border: 1px solid #ffffff !important;
     border-radius: 8px !important;
-    margin-bottom: 4px !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+}
+#quickActions:hover,
+#sidebar-v2 button[id*="quick"]:hover,
+#sidebar-v2 [class*="quick-action"]:hover {
+    background-color: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
+}
+#quickActions img,
+#quickActions span,
+#quickActions svg,
+#quickActions i {
+    filter: brightness(0) invert(1) !important;
+    color: #ffffff !important;
+}
+#quickActions:hover img,
+#quickActions:hover span,
+#quickActions:hover svg,
+#quickActions:hover i {
+    filter: brightness(0) !important;
+    color: #0d0d0d !important;
+}
+
+/* ============================================================
+   BOTÓN COLAPSAR/EXPANDIR SIDEBAR (flecha)
+   ============================================================ */
+#sidebar-v2 button[class*="collapse"],
+#sidebar-v2 button[class*="toggle"],
+#sidebar-v2 [class*="sidebar-toggle"],
+#sidebar-v2 [class*="collapse-btn"],
+.sidebar-collapse-btn,
+button[aria-label*="collapse"],
+button[aria-label*="expand"],
+button[aria-label*="sidebar"] {
+    background-color: #0d0d0d !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+}
+#sidebar-v2 button[class*="collapse"]:hover,
+#sidebar-v2 button[class*="toggle"]:hover,
+#sidebar-v2 [class*="sidebar-toggle"]:hover,
+#sidebar-v2 [class*="collapse-btn"]:hover,
+.sidebar-collapse-btn:hover,
+button[aria-label*="collapse"]:hover,
+button[aria-label*="expand"]:hover,
+button[aria-label*="sidebar"]:hover {
+    background-color: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
+}
+#sidebar-v2 button[class*="collapse"] svg,
+#sidebar-v2 button[class*="collapse"] i,
+#sidebar-v2 button[class*="toggle"] svg,
+#sidebar-v2 button[class*="toggle"] i,
+.sidebar-collapse-btn svg,
+.sidebar-collapse-btn i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    fill: #ffffff !important;
+}
+#sidebar-v2 button[class*="collapse"]:hover svg,
+#sidebar-v2 button[class*="collapse"]:hover i,
+#sidebar-v2 button[class*="toggle"]:hover svg,
+#sidebar-v2 button[class*="toggle"]:hover i,
+.sidebar-collapse-btn:hover svg,
+.sidebar-collapse-btn:hover i {
+    color: #0d0d0d !important;
+    stroke: #0d0d0d !important;
+    fill: #0d0d0d !important;
+}
+
+/* ============================================================
+   SIDEBAR NAV LINKS — REPOSO BLANCO, HOVER FUCSIA
+   ============================================================ */
+#sidebar-v2 nav a {
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+    border-radius: 8px !important;
+    margin-bottom: 2px !important;
     border-left: 3px solid transparent !important;
 }
 
 #sidebar-v2 nav a span,
 #sidebar-v2 nav a i {
-    color: var(--sb-teal) !important;
-    transition: all 0.25s ease !important;
+    color: #ffffff !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+#sidebar-v2 nav a svg,
+#sidebar-v2 nav a img {
+    filter: brightness(0) invert(1) !important;
+    transition: filter 0.2s ease !important;
 }
 
 #sidebar-v2 nav a:hover {
-    background-color: var(--sb-red) !important;
-    border-left-color: var(--sb-cream) !important;
-    box-shadow: 0 2px 12px rgba(230, 59, 74, 0.35) !important;
+    background-color: var(--sb-fucsia) !important;
+    border-left-color: #0d0d0d !important;
 }
 #sidebar-v2 nav a:hover span,
 #sidebar-v2 nav a:hover i {
-    color: var(--sb-cream) !important;
-    transform: translateX(3px) !important;
+    color: #0d0d0d !important;
+    transform: translateX(2px) !important;
+}
+#sidebar-v2 nav a:hover svg,
+#sidebar-v2 nav a:hover img {
+    filter: brightness(0) !important;
 }
 
 #sidebar-v2 nav a.active,
 #sidebar-v2 nav a.exact-active {
-    background-color: rgba(230, 59, 74, 0.18) !important;
-    border-left: 3px solid var(--sb-red) !important;
-    box-shadow: 0 0 14px rgba(230, 59, 74, 0.15) !important;
+    background-color: var(--sb-fucsia) !important;
+    border-left-color: #0d0d0d !important;
 }
 #sidebar-v2 nav a.active span,
 #sidebar-v2 nav a.exact-active span,
 #sidebar-v2 nav a.active i,
 #sidebar-v2 nav a.exact-active i {
-    color: var(--sb-cream) !important;
+    color: #0d0d0d !important;
     font-weight: 700 !important;
+}
+#sidebar-v2 nav a.active svg,
+#sidebar-v2 nav a.exact-active svg,
+#sidebar-v2 nav a.active img,
+#sidebar-v2 nav a.exact-active img {
+    filter: brightness(0) !important;
 }
 
 /* ============================================================
-   DESPLEGABLE DE CUENTAS
+   DESPLEGABLE DE CUENTAS (location switcher dropdown)
    ============================================================ */
 .hl_v2-location_switcher {
-    background-color: var(--sb-bg) !important;
-    border: 1px solid rgba(142, 206, 206, 0.25) !important;
+    background-color: #0d0d0d !important;
+    border: 1px solid #2a2a2a !important;
     border-radius: 10px !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
 }
+.hl_v2_tip-arrow { display: none !important; }
 
 .hl_v2-location_switcher .search-area input[type="search"] {
-    background-color: rgba(142, 206, 206, 0.07) !important;
-    border: 1px solid rgba(142, 206, 206, 0.2) !important;
-    color: var(--sb-cream) !important;
+    background-color: #1a1a1a !important;
+    border: 1px solid #3a3a3a !important;
+    color: #ffffff !important;
     border-radius: 8px !important;
 }
+.hl_v2-location_switcher .search-area input[type="search"]::placeholder { color: #888888 !important; }
 .hl_v2-location_switcher .search-area input[type="search"]:focus {
-    border-color: var(--sb-teal) !important;
+    border-color: var(--sb-fucsia) !important;
+    outline: none !important;
 }
 
 .hl_swicher-heading {
-    color: var(--sb-teal) !important;
-    font-weight: 800 !important;
-    border-bottom: 1px solid rgba(142, 206, 206, 0.2) !important;
+    color: #888888 !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    border-bottom: 1px solid #2a2a2a !important;
 }
 
+.hl_v2-location_switcher * {
+    color: #ffffff !important;
+}
+
+/* Subcuentas en reposo */
 .hl_account {
     border-radius: 8px !important;
     padding: 8px !important;
-    border: 1px solid rgba(142, 206, 206, 0.12) !important;
+    cursor: pointer !important;
+    background-color: #0d0d0d !important;
+    border: 1px solid #ffffff !important;
     margin-bottom: 6px !important;
-    transition: all 0.25s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: all 0.2s ease !important;
 }
-.hl_account:hover {
-    background: var(--sb-red) !important;
+/* Subcuentas hover/activo — fucsia */
+.hl_account:hover,
+.hl_account:focus,
+.hl_account.active {
+    background: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
+    border-width: 2px !important;
     transform: translateX(3px) !important;
-    box-shadow: 0 2px 12px rgba(230, 59, 74, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(255,45,120,0.3) !important;
 }
-.hl_account:hover .hl_location-recent,
-.hl_account:hover .hl_location-title,
-.hl_account:hover span { color: var(--sb-cream) !important; }
+.hl_account:hover *,
+.hl_account:focus *,
+.hl_account.active * {
+    color: #0d0d0d !important;
+    filter: none !important;
+}
 
-.hl_location-recent,
-.hl_location-title {
-    color: var(--sb-cream) !important;
+.hl_location-recent, .hl_location-title {
+    color: #ffffff !important;
     font-weight: 700 !important;
 }
 
 .hl_account .bg-gray-200 {
-    background-color: rgba(142, 206, 206, 0.2) !important;
-    color: var(--sb-cream) !important;
-    border: 1px solid rgba(142, 206, 206, 0.4) !important;
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #3a3a3a !important;
+}
+
+/* Botón "Cambiar a vista de agencia" */
+.hl_v2-location_switcher div.cursor-pointer.font-medium,
+.hl_v2-location_switcher div.cursor-pointer.font-medium * {
+    color: #ffffff !important;
+    transition: color 0.2s ease !important;
+}
+.hl_v2-location_switcher div.cursor-pointer {
+    background: #1a1a1a !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    margin-bottom: 12px !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+}
+.hl_v2-location_switcher div.cursor-pointer:hover {
+    background: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
+}
+.hl_v2-location_switcher div.cursor-pointer:hover * {
+    color: #0d0d0d !important;
+    filter: brightness(0) !important;
 }
 
 /* ============================================================
@@ -336,185 +586,72 @@ select.removeShadow,
    ============================================================ */
 .hl_header {
     background-color: var(--sb-bg) !important;
-    border-bottom: 1px solid rgba(142, 206, 206, 0.12) !important;
+    border-bottom: 1px solid var(--sb-border) !important;
 }
 
+/* Iconos topbar — fondo fucsia + border negro */
 .hl_header .btn-circle,
 .hl_header .feedback-toggle-btn,
-.hl_header button.rounded-full {
-    background: var(--sb-teal) !important;
-    border: none !important;
-    transition: all 0.25s ease !important;
+.hl_header button.rounded-full,
+.hl_header a[role="button"] {
+    background: var(--sb-fucsia) !important;
+    border: 1px solid #0d0d0d !important;
+    transition: background 0.25s ease, border-color 0.25s ease !important;
 }
 
 #hl_header--help-icon {
     background: transparent !important;
-    box-shadow: inset 0 0 0 50px var(--sb-teal) !important;
-    border: 2px solid var(--sb-teal) !important;
+    box-shadow: inset 0 0 0 50px var(--sb-fucsia) !important;
+    border: 2px solid #0d0d0d !important;
     border-radius: 50% !important;
 }
 
-.hl_header .btn-circle i {
-    color: var(--sb-bg) !important;
+.hl_header .btn-circle i,
+.hl_header .feedback-toggle-icon {
+    color: #0d0d0d !important;
 }
 
-.hl_header .btn-circle:hover {
-    background: var(--sb-red) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
+.hl_header .btn-circle:hover,
+.hl_header .feedback-toggle-btn:hover {
+    background: #0d0d0d !important;
+    border-color: #0d0d0d !important;
 }
-.hl_header .btn-circle:hover i {
-    color: var(--sb-cream) !important;
+.hl_header .btn-circle:hover i,
+.hl_header .feedback-toggle-btn:hover .feedback-toggle-icon {
+    color: #ffffff !important;
 }
 
 #hl_header--help-icon:hover {
-    box-shadow: inset 0 0 0 50px var(--sb-red) !important;
-    border-color: var(--sb-red) !important;
+    box-shadow: inset 0 0 0 50px #0d0d0d !important;
+    border: 2px solid #0d0d0d !important;
 }
 
 .hl_header .Canny_Badge,
-.hl_header .bg-danger {
-    background-color: var(--sb-red) !important;
+.hl_header .bg-danger,
+.hl_header .badge {
+    background-color: #0d0d0d !important;
+    border: 2px solid var(--sb-bg) !important;
 }
 
 .hl_header .avatar .avatar_img {
-    background-color: var(--sb-teal) !important;
-    color: var(--sb-bg) !important;
-    transition: all 0.25s ease !important;
+    border: 2px solid var(--sb-border) !important;
+    transition: border-color 0.25s ease !important;
 }
 .hl_header .avatar:hover .avatar_img {
-    background-color: var(--sb-red) !important;
-    color: var(--sb-cream) !important;
+    border-color: var(--sb-fucsia) !important;
 }
 
 /* ============================================================
-   SCROLLBARS
+   ASK AI — SIN ESTILOS (resetear todo)
    ============================================================ */
-#location-dashboard::-webkit-scrollbar,
-.n-scrollbar::-webkit-scrollbar { width: 6px !important; }
-#location-dashboard::-webkit-scrollbar-thumb,
-.n-scrollbar::-webkit-scrollbar-thumb { background: var(--sb-teal) !important; border-radius: 10px !important; }
-#location-dashboard::-webkit-scrollbar-thumb:hover,
-.n-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--sb-red) !important; }
-
-/* ============================================================
-   PESTAÑAS
-   ============================================================ */
-.topmenu-navitem span { color: var(--sb-teal) !important; }
-.topmenu-navitem:not(.active):hover span { color: var(--sb-cream) !important; }
-.topmenu-navitem.active { border-bottom-color: var(--sb-red) !important; }
-.topmenu-navitem.active span { color: var(--sb-cream) !important; }
-
-.n-tabs-tab:not(.n-tabs-tab--active):hover .n-tabs-tab__label { color: var(--sb-cream) !important; }
-.n-tabs-tab--active .n-tabs-tab__label { color: var(--sb-cream) !important; }
-.n-tabs-bar { background-color: var(--sb-red) !important; }
-
-/* ============================================================
-   CHECKBOXES
-   ============================================================ */
-.n-checkbox.n-checkbox--checked .n-checkbox-box {
-    background-color: var(--sb-cream) !important;
-    border-color: var(--sb-teal) !important;
-}
-.n-checkbox.n-checkbox--checked .n-checkbox-box .n-checkbox-icon {
-    color: var(--sb-bg) !important;
-}
-input[type="checkbox"] { accent-color: var(--sb-red) !important; }
-
-/* ============================================================
-   BOTONES
-   ============================================================ */
-.n-button--primary-type {
-    background-color: var(--sb-teal) !important;
-    border-color: var(--sb-teal) !important;
-    color: var(--sb-bg) !important;
-}
-.n-button--primary-type:hover {
-    background-color: var(--sb-red) !important;
-    color: var(--sb-cream) !important;
-}
-
-/* ============================================================
-   BUSCADOR GLOBAL
-   ============================================================ */
-#globalSearchOpener {
-    background-color: rgba(30, 69, 69, 0.85) !important;
-    border: 1px solid rgba(142, 206, 206, 0.3) !important;
-    border-radius: 8px !important;
-}
-#globalSearchOpener:hover {
-    border-color: var(--sb-teal) !important;
-}
-#globalSearchOpener .search-placeholder { color: var(--sb-teal) !important; }
-
-#quickActions {
-    background-color: var(--sb-red) !important;
-    border-radius: 8px !important;
-}
-#quickActions:hover { background-color: #c42d3a !important; }
-#quickActions img, #quickActions span { filter: brightness(0) invert(1) !important; }
-
-/* ============================================================
-   ALERTAS
-   ============================================================ */
-.hl_login .alert { color: #1a1a1a !important; }
-
-/* ============================================================
-   BOTONES TOPBAR QUE NO RECIBEN HOVER
-   ============================================================ */
-
-/* Ask AI button (#template-power-dialer) */
-#template-power-dialer .btn-circle,
-#template-power-dialer button,
-[id^="template-power-dialer"] button {
-    background: var(--sb-teal) !important;
-    border: none !important;
-    color: var(--sb-bg) !important;
-    transition: all 0.25s ease !important;
-}
-#template-power-dialer .btn-circle:hover,
-#template-power-dialer button:hover {
-    background: var(--sb-red) !important;
-    color: var(--sb-cream) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
-}
-
-/* Texto/ícono dentro del botón Ask AI */
-#template-power-dialer span,
-#template-power-dialer i {
-    color: var(--sb-bg) !important;
-    transition: color 0.25s ease !important;
-}
-#template-power-dialer button:hover span,
-#template-power-dialer button:hover i {
-    color: var(--sb-cream) !important;
-}
-
-/* Botón megáfono / feedback (#i18n-feedback) */
-#i18n-feedback .btn-circle,
-#i18n-feedback button,
-[id="i18n-feedback"] button {
-    background: var(--sb-teal) !important;
-    border: none !important;
-    color: var(--sb-bg) !important;
-    transition: all 0.25s ease !important;
-}
-#i18n-feedback .btn-circle:hover,
-#i18n-feedback button:hover {
-    background: var(--sb-red) !important;
-    color: var(--sb-cream) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
-}
-#i18n-feedback span,
-#i18n-feedback i {
-    color: var(--sb-bg) !important;
-    transition: color 0.25s ease !important;
-}
-#i18n-feedback button:hover span,
-#i18n-feedback button:hover i {
-    color: var(--sb-cream) !important;
+.hl_header [class*="ask-ai"],
+.hl_header [id*="ask-ai"],
+.hl_header [class*="askAI"],
+.hl_header [id*="askAI"],
+.hl_header button[class*="ask"],
+#ask-ai-btn,
+[data-testid*="ask-ai"] {
+    all: revert !important;
 }
 
 /* ============================================================
@@ -522,67 +659,127 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
    ============================================================ */
 .hl_header button[aria-label="Llamada de voz"],
 .hl_header button.bg-success-600 {
-    background-color: var(--sb-teal) !important;
-    border: 1px solid var(--sb-teal) !important;
+    background-color: var(--sb-fucsia) !important;
+    border: 1px solid #0d0d0d !important;
     border-radius: 50% !important;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
 }
 .hl_header button[aria-label="Llamada de voz"] svg,
 .hl_header button.bg-success-600 svg {
-    color: var(--sb-bg) !important;
-    stroke: var(--sb-bg) !important;
-    fill: var(--sb-bg) !important;
+    color: #0d0d0d !important;
+    stroke: #0d0d0d !important;
 }
 .hl_header button[aria-label="Llamada de voz"]:hover,
 .hl_header button.bg-success-600:hover {
-    background-color: var(--sb-red) !important;
-    border-color: var(--sb-red) !important;
+    background-color: #0d0d0d !important;
+    border-color: #0d0d0d !important;
     transform: translateY(-2px) !important;
 }
 .hl_header button[aria-label="Llamada de voz"]:hover svg,
 .hl_header button.bg-success-600:hover svg {
-    color: var(--sb-cream) !important;
-    stroke: var(--sb-cream) !important;
-    fill: var(--sb-cream) !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
 }
 
 /* ============================================================
-   ÍCONO ASK AI y MEGÁFONO — btn-circle general
+   TOPBAR — BOTÓN RAYO (quickActions)
    ============================================================ */
-.hl_header .btn-circle,
-.hl_header button.rounded-full {
-    background: var(--sb-teal) !important;
-    border: 1px solid var(--sb-teal) !important;
-    transition: background 0.25s ease, border-color 0.25s ease !important;
+#quickActions {
+    background-color: #0d0d0d !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
 }
-.hl_header .btn-circle i,
-.hl_header button.rounded-full i,
-.hl_header .btn-circle svg,
-.hl_header button.rounded-full svg {
-    color: var(--sb-bg) !important;
-    fill: var(--sb-bg) !important;
+#quickActions:hover {
+    background-color: var(--sb-fucsia) !important;
+    border-color: #0d0d0d !important;
 }
-.hl_header .btn-circle:hover,
-.hl_header button.rounded-full:hover {
-    background: var(--sb-red) !important;
-    border-color: var(--sb-red) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 14px rgba(230, 59, 74, 0.4) !important;
-}
-.hl_header .btn-circle:hover i,
-.hl_header button.rounded-full:hover i,
-.hl_header .btn-circle:hover svg,
-.hl_header button.rounded-full:hover svg {
-    color: var(--sb-cream) !important;
-    fill: var(--sb-cream) !important;
+#quickActions img,
+#quickActions span,
+#quickActions svg,
+#quickActions i {
     filter: brightness(0) invert(1) !important;
+    color: #ffffff !important;
 }
+#quickActions:hover img,
+#quickActions:hover span,
+#quickActions:hover svg,
+#quickActions:hover i {
+    filter: brightness(0) !important;
+    color: #0d0d0d !important;
+}
+
+/* ============================================================
+   BUSCADOR GLOBAL
+   ============================================================ */
+#globalSearchOpener {
+    background-color: #1a1a1a !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 8px !important;
+}
+#globalSearchOpener:hover {
+    border-color: var(--sb-fucsia) !important;
+    background-color: #1a1a1a !important;
+}
+#globalSearchOpener .search-placeholder { color: #888888 !important; }
+
+/* ============================================================
+   SCROLLBARS
+   ============================================================ */
+#location-dashboard::-webkit-scrollbar,
+#dashboard-wrapper::-webkit-scrollbar,
+.n-scrollbar::-webkit-scrollbar { width: 6px !important; }
+#location-dashboard::-webkit-scrollbar-thumb,
+#dashboard-wrapper::-webkit-scrollbar-thumb,
+.n-scrollbar::-webkit-scrollbar-thumb { background: #3a3a3a !important; border-radius: 10px !important; }
+#location-dashboard::-webkit-scrollbar-thumb:hover,
+#dashboard-wrapper::-webkit-scrollbar-thumb:hover,
+.n-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--sb-fucsia) !important; }
+
+/* ============================================================
+   PESTAÑAS
+   ============================================================ */
+.topmenu-navitem span { color: var(--sb-muted) !important; }
+.topmenu-navitem:not(.active):hover span { color: #0d0d0d !important; }
+.topmenu-navitem.active { border-bottom-color: var(--sb-fucsia) !important; }
+.topmenu-navitem.active span { color: #0d0d0d !important; }
+
+.n-tabs-tab:not(.n-tabs-tab--active):hover .n-tabs-tab__label { color: #0d0d0d !important; }
+.n-tabs-tab--active .n-tabs-tab__label { color: #0d0d0d !important; }
+.n-tabs-bar { background-color: var(--sb-fucsia) !important; }
+
+/* ============================================================
+   CHECKBOXES
+   ============================================================ */
+.n-checkbox.n-checkbox--checked .n-checkbox-box { background-color: var(--sb-fucsia) !important; border-color: var(--sb-fucsia) !important; }
+.n-checkbox.n-checkbox--checked .n-checkbox-box .n-checkbox-icon { color: #ffffff !important; }
+input[type="checkbox"] { accent-color: var(--sb-fucsia) !important; }
+
+/* ============================================================
+   BOTONES PRIMARIOS
+   ============================================================ */
+.n-button--primary-type {
+    background-color: #0d0d0d !important;
+    border-color: #0d0d0d !important;
+    color: #ffffff !important;
+}
+.n-button--primary-type:hover {
+    background-color: var(--sb-fucsia) !important;
+    border-color: var(--sb-fucsia) !important;
+    color: #0d0d0d !important;
+}
+
+/* ============================================================
+   ALERTAS
+   ============================================================ */
+.hl_login .alert,
+.hl_login [role="alert"] { color: #1a1a1a !important; }
 
 /* ============================================================
    FIX: SUBMENÚ CUENTAS — evitar desbordamiento
    ============================================================ */
 .hl_v2-location_switcher {
-    max-height: calc(100vh - 80px) !important;
+    max-height: 60vh !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
 }
@@ -592,13 +789,4 @@ input[type="checkbox"] { accent-color: var(--sb-red) !important; }
 .hl_v2-location_switcher [class*="accounts"] {
     max-height: calc(100vh - 180px) !important;
     overflow-y: auto !important;
-}
-
-/* ============================================================
-   FIX: SUBMENÚ CUENTAS — altura controlada
-   ============================================================ */
-.hl_v2-location_switcher {
-    max-height: 60vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
 }
