@@ -324,10 +324,10 @@ select.removeShadow,
 #location-switcher-sidbar-v2:hover,
 #location-switcher-sidbar-v2:focus,
 #location-switcher-sidbar-v2.active {
-    background-color: var(--sb-fucsia) !important;
-    border-color: #0d0d0d !important;
+    background-color: #0d0d0d !important;
+    border-color: var(--sb-fucsia) !important;
     border-width: 2px !important;
-    box-shadow: 0 2px 8px rgba(255,45,120,0.3) !important;
+    box-shadow: 0 0 14px 3px rgba(255,45,120,0.6), 0 0 30px 6px rgba(255,45,120,0.25) !important;
 }
 #location-switcher-sidbar-v2:hover span,
 #location-switcher-sidbar-v2:hover i,
@@ -338,11 +338,11 @@ select.removeShadow,
 #location-switcher-sidbar-v2.active span,
 #location-switcher-sidbar-v2.active i,
 #location-switcher-sidbar-v2.active div {
-    color: #0d0d0d !important;
+    color: #ffffff !important;
 }
 #location-switcher-sidbar-v2:hover svg,
 #location-switcher-sidbar-v2:hover img {
-    filter: brightness(0) !important;
+    filter: brightness(0) invert(1) !important;
 }
 
 /* ============================================================
@@ -530,20 +530,20 @@ button[aria-label*="sidebar"]:hover {
     align-items: center !important;
     transition: all 0.2s ease !important;
 }
-/* Subcuentas hover/activo — fucsia */
+/* Subcuentas hover/activo — border fucsia + glow */
 .hl_account:hover,
 .hl_account:focus,
 .hl_account.active {
-    background: var(--sb-fucsia) !important;
-    border-color: #0d0d0d !important;
+    background: #0d0d0d !important;
+    border-color: var(--sb-fucsia) !important;
     border-width: 2px !important;
     transform: translateX(3px) !important;
-    box-shadow: 0 2px 8px rgba(255,45,120,0.3) !important;
+    box-shadow: 0 0 14px 3px rgba(255,45,120,0.6), 0 0 30px 6px rgba(255,45,120,0.2) !important;
 }
 .hl_account:hover *,
 .hl_account:focus *,
 .hl_account.active * {
-    color: #0d0d0d !important;
+    color: #ffffff !important;
     filter: none !important;
 }
 
